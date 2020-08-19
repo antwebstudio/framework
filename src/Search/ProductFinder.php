@@ -24,7 +24,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 class ProductFinder
 {
     /** @var Builder */
-    private $queryBuilder;
+    protected $queryBuilder;
 
     public function __construct()
     {

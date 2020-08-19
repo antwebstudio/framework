@@ -21,7 +21,9 @@ class OrderFactory extends BaseOrderFactory
     {
         $orderData = [
             'billpayer'       => $checkout->getBillpayer()->toArray(),
-            'shippingAddress' => $checkout->getShippingAddress()->toArray()
+            'shippingAddress' => $checkout->getShippingAddress()->toArray(),
+            'shipping_method' => $checkout->getShippingMethodId(),
+            'shipping_charges' => $checkout->getShippingCharges(),
         ];
 
         $items = $this->convertCartItemsToDataArray($checkout->getCart());
